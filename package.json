@@ -6,7 +6,7 @@
   "scripts": {
     "setup": "./node_modules/.bin/node-lambda setup",
     "test": "./node_modules/mocha/bin/mocha --recursive",
-    "local": "./node_modules/.bin/node-lambda run -f deploy.env && standard 'lib/**/*.js'",
+    "local": "./node_modules/.bin/node-lambda run -f local.env && standard 'lib/**/*.js'",
     "fix": "standard --fix 'lib/**/*.js'",
     "fixtest": "standard --fix 'test/**/*.js' --env mocha",
     "package": "./node_modules/.bin/node-lambda package",
