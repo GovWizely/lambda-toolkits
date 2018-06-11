@@ -1,22 +1,28 @@
 {
-  "name": "lambda-toolkits",
-  "version": "0.0.2",
-  "description": "A Lambda function for retreiving, transforming, and ingesting Toolkits data from Salesforce.",
-  "main": "index.js",
+  "name": "toolkit-data-etl",
+  "version": "0.0.1",
+  "description": "A Lambda function for retrieving, transforming, and ingesting Toolkits data from Salesforce.",
+  "main": "new_index.js",
   "scripts": {
     "setup": "./node_modules/.bin/node-lambda setup",
-    "test": "./node_modules/.bin/node-lambda run",
+    "test": "./node_modules/mocha/bin/mocha --recursive",
+    "local": "./node_modules/.bin/node-lambda run -f deploy.env && standard 'lib/**/*.js'",
+    "fix": "standard --fix 'lib/**/*.js'",
+    "fixtest": "standard --fix 'test/**/*.js' --env mocha",
     "package": "./node_modules/.bin/node-lambda package",
-    "deploy": "./node_modules/.bin/node-lambda deploy"
+    "deploy": "./node_modules/.bin/node-lambda deploy -f deploy.env -S event_sources.json"
   },
   "devDependencies": {
-    "node-lambda": "^0.9.0"
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "node-lambda": "^0.11.7",
+    "sinon": "^5.1.1",
+    "standard": "^11.0.1"
   },
   "dependencies": {
-    "aws-sdk": "^2.216.1",
-    "csv": "^3.0.2",
-    "jsforce": "^1.8.2",
-    "lodash": "^4.17.5",
-    "request": "^2.85.0"
+    "aws-sdk": "^2.253.1",
+    "jsforce": "^1.8.4",
+    "lodash": "^4.17.10",
+    "request": "^2.87.0"
   }
 }

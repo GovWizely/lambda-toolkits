@@ -23,6 +23,7 @@ There are 4 available commands to use on this template. For more info and usage 
 cd /your/path
 npm run setup # setup node-lambda files
 npm run test # test your event handler and check output
+npm run fix # run standard --fix
 npm run package # just generate the zip that would be uploaded to AWS
 npm run deploy # deploy to AWS
 ```
